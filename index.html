@@ -1,0 +1,124 @@
+<!--JFJ-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JFJ -CDN Test</title>
+        <link href="./css/variable.css" rel="stylesheet" />
+        <link href="./css/form-styling.css" rel="stylesheet" />
+    </head>
+    <body>
+		<form id="testForm" name="testForm">
+			
+			<div class="field-set userName text-field-set " style="max-width: 300px;">
+				<input class="field-tag text-field field-validate field-required " id="name" name="name" title="Name" type="text" maxlength="30" placeholder=" " required="" data-pattern="[a-zA-Z ]{1,30}" data-patterndesc="a-z A-Z">
+				<label class="field-label text-field-label " for="name">
+					Name<span class="required-helper">*</span>
+				</label>
+				<span class="field-helper"></span>
+			</div>
+			
+			<div class="field-set userName textarea-field-set " style="max-width: 300px;">
+				<textarea class="field-tag textarea-field field-validate field-required " id="name2" name="name2" title="Name" type="text" rows="4" maxlength="30" placeholder=" " required="" data-pattern="[a-zA-Z ]{1,30}" data-patterndesc="a-z A-Z"></textarea>
+				<label class="field-label textarea-field-label " for="name2">
+					Name<span class="required-helper">*</span>
+				</label>
+				<span class="field-helper"></span>
+			</div>
+			
+			<div class="field-set userOrderMail checkbox-field-set " style="max-width: 300px;">
+				<input class="field-tag checkbox-field field-required " id="sendMail" name="sendMail" title="Order Copy" type="checkbox" placeholder=" ">
+				<label class="field-label checkbox-field-label " for="sendMail">
+					Order Copy<span class="required-helper">*</span>
+				</label>
+				<span class="field-helper"></span>
+			</div>
+			
+			<div class="field-set input-checkbox radio-field-set " style="max-width: 300px;">
+				<input class="field-tag radio-field field-required " name="purposeSelection" id="request" title="Generate/Raise PCR" type="radio" maxlength="" patternvalidationtype="" value="" data-value="request" placeholder=" " autocomplete="off">
+				<label class="field-label radio-field-label " for="request">
+					Generate/Raise PCR<span class="required-helper">*</span>
+				</label>
+				<span class="field-helper"></span>
+			</div>
+			
+			<div class="field-set input-checkbox radio-field-set " style="max-width: 300px;">
+				<input class="field-tag radio-field field-required " name="purposeSelection" id="new" title="New PCR" type="radio" maxlength="" patternvalidationtype="" value="" data-value="new" placeholder=" " autocomplete="off">
+				<label class="field-label radio-field-label " for="new">
+					New PCR<span class="required-helper">*</span>
+				</label>
+				<span class="field-helper"></span>
+			</div>
+			
+			<div class="field-set select-field-set " style="max-width: 300px;">
+				<input class="field-tag select-field field-required " id="pcrClassi-alt" name="pcrClassi-alt" title="Select Classification" type="select" maxlength="" patternvalidationtype="" value="" data-list="selectClassification" data-orginalfield="pcrClassi" autocomplete="off" placeholder=" " data-pattern="" data-patterndesc="">
+				<label class="field-label select-field-label " for="pcrClassi-alt">
+					Select Classification<span class="required-helper">*</span>
+				</label>
+				<select style="display: none;" name="pcrClassi" id="pcrClassi"><option value="" selected=""></option></select>
+				<label class="field-additional-label select-field-additional-label " for="pcrClassi-alt"></label>
+				<span class="symbol-helper"></span>
+				<span class="field-helper"></span>
+			</div>
+			<datalist id="selectClassification" class="field-datalist">
+				<option value="null">Select Classification</option>
+				<option value="General" disabled>General</option>
+				<option value="Design">Design</option>
+				<option value="Manufacturing" disabled>Manufacturing</option>
+				<option value="Materials">Materials</option>
+				<option value="General">General</option>
+				<option value="Design" disabled>Design</option>
+				<option value="Manufacturing">Manufacturing</option>
+				<option value="Materials" disabled>Materials</option>
+			</datalist>
+
+			<div class="field-set select-field-set default-select " style="max-width: 300px;">
+				<input class="field-tag select-field field-required " id="pcrClassi1-alt" name="pcrClassi1-alt" title="Select Classification" type="select" maxlength="" patternvalidationtype="" value="" data-list="selectClassification1" data-orginalfield="pcrClassi1" autocomplete="off" placeholder=" " data-pattern="" data-patterndesc="">
+				<label class="field-label select-field-label " for="pcrClassi-alt">
+					Select Classification<span class="required-helper">*</span>
+				</label>
+				<select style="display: none;" name="pcrClassi1" id="pcrClassi1"><option value="" selected=""></option></select>
+				<label class="field-additional-label select-field-additional-label " for="pcrClassi1-alt"></label>
+				<span class="symbol-helper"></span>
+				<span class="field-helper"></span>
+			</div>
+			<datalist id="selectClassification1" class="field-datalist">
+				<option value="null">Select Classification</option>
+				<option value="General" disabled>General</option>
+				<option value="Design">Design</option>
+				<option value="Manufacturing" disabled>Manufacturing</option>
+				<option value="Materials" selected>Materials</option>
+				<option value="General">General</option>
+				<option value="Design" disabled>Design</option>
+				<option value="Manufacturing">Manufacturing</option>
+				<option value="Materials" disabled>Materials</option>
+			</datalist>
+			
+			<div class="field-set userFile file-field-set " style="max-width: 300px;">
+				<input class="field-tag file-field field-required " id="file" name="file" title="File" type="file" maxlength="" placeholder=" " required="" data-pattern="" data-patterndesc="">
+				<label class="field-label file-field-label " for="name">
+					Name<span class="required-helper">*</span>
+				</label>
+				<span class="field-helper"></span>
+			</div>
+			
+			<div class="field-set cartSubmit submit-field-set " style="max-width: 300px;">
+				<input class="field-tag submit-field " id="cartOrder" name="cartOrder" title="Confirm Order" type="submit" value="Confirm Order" placeholder=" ">
+				<label class="field-label submit-field-label " for="cartOrder">
+					Confirm Order
+				</label>
+				<span class="field-helper"></span>
+			</div>
+
+		</form>
+		
+		<script src="./js/jquery-3_5_1.min.js"></script>
+		<script src="./js/custom-form.js"></script>
+		<script>
+			$( document ).ready(function() {
+				customForm.init();
+			});
+		</script>
+    </body>
+</html>

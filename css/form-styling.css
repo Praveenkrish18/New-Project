@@ -1,0 +1,440 @@
+:root {
+	 --fieldBorderColor: var(--black);
+	 --fieldThemeColor: var(--black);
+	 --fieldThemeHoverColor: var(--);
+	 --fieldThemeBackgroundColor: transparent;
+	 --fieldFocusColor: var(--focusColor);
+	 --fieldErrorColor: var(--errorColor);
+	 --fieldSuccessColor: var(--successColor);
+	 --fieldFontFamily: system-ui;
+	 --fieldButtonColor: var(--buttonColor);
+	 --fieldButtonHoverColor: var(--buttonHoverColor);
+}
+ .field-set {
+	 position: relative;
+	 margin: 0 0;
+	 height: 55px;
+	 display: flex;
+	 flex-direction: column;
+	 -webkit-flex-direction: column;
+	 font-family: var(--fieldFontFamily);
+	 color: var(--fieldBorderColor);
+	 padding: 0 0 10px 0;
+}
+ @media (max-width: 426px) {
+	 .field-set {
+		 width: 95% !important;
+		 max-width: 95% !important;
+	}
+}
+ .field-set .field-label, .field-set .field-additional-label {
+	 height: 35px;
+	 width: 100%;
+	 position: absolute;
+	 font-weight: 600;
+	 line-height: 30px;
+	 text-align: left;
+	 margin: 1.6px 0 0 5px;
+	 padding: 0 3px;
+	 font-size: 14px;
+	 z-index: 0;
+	 cursor: text;
+	 background-color: var(--fieldThemeBackgroundColor);
+	 transition-duration: 0.1s;
+	 -moz-transition-duration: 0.1s;
+	 -webkit-transition-duration: 0.1s;
+	 box-sizing: border-box;
+	 -moz-box-sizing: border-box;
+	 -webkit-box-sizing: border-box;
+}
+ .field-set .field-label .required-helper, .field-set .field-additional-label .required-helper {
+	 color: var(--fieldErrorColor);
+	 font-size: 15px;
+	 font-weight: 900;
+}
+ .field-set .field-tag {
+	 height: 35px !important;
+	 width: 100% !important;
+	 padding: 0 5px;
+	 color: var(--fieldBorderColor);
+	 border-color: var(--fieldBorderColor);
+	 border-width: 1.5px;
+	 border-style: solid;
+	 border-radius: 3px;
+	 font-size: 13px;
+	 z-index: 1;
+	 background-color: var(--fieldThemeBackgroundColor);
+	 position: absolute;
+	 box-sizing: border-box;
+	 -moz-box-sizing: border-box;
+	 -webkit-box-sizing: border-box;
+}
+ .field-set .field-tag:focus {
+	 outline: none;
+	 -moz-outline: none;
+	 color: var(--fieldFocusColor);
+	 border-color: var(--fieldFocusColor);
+}
+ .field-set .field-tag:focus ~ .field-helper {
+	 color: var(--fieldFocusColor);
+}
+ .field-set .field-tag:focus ~ .field-label {
+	 color: var(--fieldFocusColor);
+}
+ .field-set .field-tag:not(:placeholder-shown) ~ .field-label {
+	 font-size: 12px;
+	 line-height: 11px;
+	 margin-top: -5px;
+	 background-color: var(--white);
+	 z-index: 1;
+	 width: auto;
+	 height: auto;
+}
+ .field-set .field-tag:not(:placeholder-shown) ~ .field-additional-label {
+	 display: inline;
+}
+ .field-set .field-tag:placeholder-shown ~ .field-label {
+	 font-size: 14px;
+	 line-height: 30px;
+	 margin-top: 1.6px;
+	 background-color: var(--fieldThemeBackgroundColor);
+}
+ .field-set .field-tag:placeholder-shown ~ .field-additional-label {
+	 display: none;
+}
+ .field-set .field-tag:-webkit-autofill, .field-set .field-tag:-webkit-autofill:hover, .field-set .field-tag:-webkit-autofill:focus, .field-set .field-tag:-webkit-autofill:active {
+	 -webkit-text-fill-color: inherit !important;
+	 -webkit-background-clip: text;
+	 -moz-background-clip: text;
+}
+ .field-set .field-helper {
+	 font-size: 12px;
+	 margin-top: 35px;
+	 text-align: left;
+	 display: none;
+	 cursor: default;
+}
+ .field-set .field-helper .to-remove-text {
+	 background: var(--fieldErrorColor);
+	 border: 1px solid var(--fieldErrorColor);
+	 color: var(--white);
+	 padding: 0 10px;
+	 border-radius: 8px;
+	 margin-top: 1px;
+	 margin-left: 3px;
+	 position: absolute;
+	 max-width: 110px;
+	 cursor: pointer;
+}
+ .field-set .field-helper .to-remove-text .remove-text {
+	 font-weight: 600;
+}
+ .field-set .field-helper .to-remove-suggestion {
+	 background: var(--white);
+	 border: 1px solid var(--fieldErrorColor);
+	 padding: 0 10px;
+	 border-radius: 8px;
+	 margin-top: 1px;
+	 margin-left: 3px;
+	 position: absolute;
+	 max-width: 110px;
+}
+ .field-set .field-helper .to-remove-suggestion .remove-text {
+	 font-weight: 600;
+}
+ .field-set.validation-error .field-label, .field-set.validation-error .field-tag, .field-set.validation-error .field-helper, .field-set.validation-error .field-additional-label {
+	 color: var(--fieldErrorColor) !important;
+}
+ .field-set.validation-error .field-tag {
+	 border-color: var(--fieldErrorColor) !important;
+}
+ .field-set.validation-error .field-tag:after, .field-set.validation-error .field-tag:checked:after {
+	 border-color: var(--fieldErrorColor) !important;
+	 color: var(--fieldErrorColor) !important;
+}
+ .field-set.validation-error .field-tag::file-selector-button, .field-set.validation-error .field-tag::-webkit-file-upload-button {
+	 background-color: var(--fieldErrorColor) !important;
+}
+ .field-set.validation-error .field-helper {
+	 display: block;
+}
+ .field-set.validation-error .symbol-helper:after {
+	 color: var(--fieldErrorColor) !important;
+}
+ .field-set.validation-success .field-label, .field-set.validation-success .field-tag, .field-set.validation-success .field-helper, .field-set.validation-success .field-additional-label {
+	 color: var(--fieldSuccessColor) !important;
+}
+ .field-set.validation-success .field-tag {
+	 border-color: var(--fieldSuccessColor) !important;
+}
+ .field-set.validation-success .field-tag:after, .field-set.validation-success .field-tag:checked:after {
+	 border-color: var(--fieldSuccessColor) !important;
+	 color: var(--fieldSuccessColor) !important;
+}
+ .field-set.validation-success .field-tag::file-selector-button, .field-set.validation-success .field-tag::-webkit-file-upload-button {
+	 background-color: var(--fieldSuccessColor) !important;
+}
+ .field-set.validation-success .symbol-helper:after {
+	 color: var(--fieldSuccessColor) !important;
+}
+ .field-set.validation-success .field-tag:focus, .field-set.validation-error .field-tag:focus {
+	 outline: none;
+	 border-color: var(--fieldFocusColor) !important;
+}
+ .field-set.validation-success .field-tag:focus:not(.select-field), .field-set.validation-error .field-tag:focus:not(.select-field) {
+	 color: var(--fieldFocusColor) !important;
+}
+ .field-set.validation-success .field-tag:focus ~ .field-label, .field-set.validation-success .field-tag:focus ~ .field-additional-label, .field-set.validation-success .field-tag:focus ~ .field-helper, .field-set.validation-success .field-tag:focus ~ .symbol-helper:after, .field-set.validation-success .field-tag:focus:checked:after, .field-set.validation-error .field-tag:focus ~ .field-label, .field-set.validation-error .field-tag:focus ~ .field-additional-label, .field-set.validation-error .field-tag:focus ~ .field-helper, .field-set.validation-error .field-tag:focus ~ .symbol-helper:after, .field-set.validation-error .field-tag:focus:checked:after {
+	 color: var(--fieldFocusColor) !important;
+}
+ .field-set.validation-success .field-tag:focus::file-selector-button, .field-set.validation-success .field-tag:focus::-webkit-file-upload-button, .field-set.validation-error .field-tag:focus::file-selector-button, .field-set.validation-error .field-tag:focus::-webkit-file-upload-button {
+	 background-color: var(--fieldFocusColor) !important;
+}
+ .field-set.disabled {
+	 opacity: 0.5 !important;
+	 -webkit-opacity: 0.5 !important;
+	 -moz-opacity: 0.5 !important;
+	 pointer-events: none !important;
+	 cursor: none !important;
+}
+ .field-set.select-field-set .field-label {
+	 cursor: pointer;
+}
+ .field-set.select-field-set .field-additional-label {
+	 cursor: pointer;
+	 display: inline;
+	 text-align: left;
+}
+ .field-set.select-field-set .field-tag {
+	 cursor: pointer;
+	 caret-color: transparent;
+	 color: transparent !important;
+}
+ .field-set.select-field-set .field-tag::-webkit-calendar-picker-indicator {
+	 display: none;
+}
+ .field-set.select-field-set .field-tag:after {
+	 content: ' \25E3';
+	 color: var(--fieldThemeColor);
+	 margin: 0 0 0 -2.5px;
+}
+ .field-set.select-field-set .symbol-helper {
+	 cursor: pointer;
+	 transform: rotate(-45deg);
+	 -ms-transform: rotate(-45deg);
+	 -webkit-transform: rotate(-45deg);
+	 display: block;
+	 right: 0;
+	 position: absolute;
+	 line-height: 26px;
+	 font-size: 14px;
+	 margin-right: 10px;
+}
+ .field-set.select-field-set .symbol-helper:after {
+	 content: ' \25E3';
+	 color: var(--fieldThemeColor);
+	 margin: 0 0 0 -2.5px;
+}
+ .field-set.submit-field-set .field-label, .field-set.reset-field-set .field-label {
+	 display: none;
+}
+ .field-set.submit-field-set .field-tag, .field-set.reset-field-set .field-tag {
+	 background-color: var(--fieldButtonColor);
+	 border-color: var(--fieldButtonColor);
+	 border-style: solid;
+	 border-radius: 3px;
+	 border-width: 1px;
+	 padding: 3px;
+	 color: var(--white);
+	 font-weight: bold;
+	 font-size: 1.1em;
+	 cursor: pointer;
+}
+ .field-set.submit-field-set .field-tag:hover, .field-set.submit-field-set .field-tag:focus, .field-set.reset-field-set .field-tag:hover, .field-set.reset-field-set .field-tag:focus {
+	 background-color: var(--fieldButtonHoverColor);
+	 border-color: var(--fieldButtonHoverColor);
+}
+ .field-set.checkbox-field-set {
+	 height: 30px;
+	 margin-bottom: 20px;
+}
+ .field-set.checkbox-field-set .field-label {
+	 margin: 0 0 0 35px;
+	 cursor: pointer;
+	 font-size: 14px !important;
+	 line-height: 30px !important;
+	 margin-top: 1.0px !important;
+	 background-color: var(--fieldThemeBackgroundColor) !important;
+}
+ .field-set.checkbox-field-set .field-tag {
+	 transform: scale(2);
+	 margin-left: -6px;
+	 margin-top: -2.5px;
+	 width: 0px !important;
+	 height: 0px !important;
+	 -webkit-appearance: none;
+	 -moz-appearance: none;
+	 -o-appearance: none;
+	 visibility: hidden;
+	 cursor: pointer;
+}
+ .field-set.checkbox-field-set .field-tag:after {
+	 content: " ";
+	 background-color: var(--white);
+	 display: inline-block;
+	 color: var(--baseColor);
+	 width: 14px;
+	 height: 14px;
+	 visibility: visible;
+	 border-color: var(--fieldBorderColor);
+	 border-width: 1px;
+	 border-style: solid;
+	 border-radius: 2px;
+}
+ .field-set.checkbox-field-set .field-tag:focus, .field-set.checkbox-field-set .field-tag:active {
+	 border-color: var(--fieldButtonHoverColor);
+}
+ .field-set.checkbox-field-set .field-tag:checked:after {
+	 content: ' \2714';
+	 color: var(--fieldThemeColor);
+	 display: inline-block;
+	 text-align: center;
+	 line-height: 16px;
+}
+ .field-set.checkbox-field-set .field-helper {
+	 line-height: 25px;
+	 text-align: right;
+}
+ .field-set.radio-field-set {
+	 height: 30px;
+	 margin-bottom: 20px;
+}
+ .field-set.radio-field-set .field-tag {
+	 height: 25px !important;
+	 width: 25px !important;
+	 margin: revert;
+	 margin-left: 0;
+	 cursor: pointer;
+	 -webkit-appearance: none;
+	 -moz-appearance: none;
+	 -o-appearance: none;
+	 border-color: var(--fieldBorderColor);
+	 border-width: 2px;
+	 border-style: solid;
+	 border-radius: 50%;
+	 display: inline-block;
+	 padding: 4px;
+	 background-clip: content-box;
+	 -webkit-background-clip: content-box;
+	 -moz-background-clip: content-box;
+	 background-color: #e7e6e7;
+}
+ .field-set.radio-field-set .field-tag:focus, .field-set.radio-field-set .field-tag:active {
+	 border-color: var(--fieldButtonHoverColor);
+}
+ .field-set.radio-field-set .field-tag:checked {
+	 background-color: var(--fieldThemeColor);
+}
+ .field-set.radio-field-set .field-label {
+	 margin-left: 30px;
+	 line-height: 40px !important;
+	 font-size: 14px !important;
+	 cursor: pointer;
+}
+ .field-set.file-field-set .field-label {
+	 cursor: pointer;
+}
+ .field-set.file-field-set .field-tag {
+	 padding-right: 0;
+	 line-height: 30px;
+	 cursor: pointer;
+	 font-family: inherit;
+}
+ .field-set.file-field-set .field-tag::file-selector-button, .field-set.file-field-set .field-tag::-webkit-file-upload-button {
+	 -webkit-appearance: button;
+	 background-color: var(--fieldThemeColor);
+	 color: var(--white);
+	 border: 0;
+	 height: 100%;
+	 float: right;
+	 cursor: pointer;
+	 margin-right: -0.5px;
+	 font-weight: 600;
+	 font: inherit;
+	 font-family: inherit;
+}
+ .field-set.file-field-set .field-tag::file-selector-button:hover, .field-set.file-field-set .field-tag::-webkit-file-upload-button:hover {
+	 opacity: 0.7;
+	 -webkit-opacity: 0.7;
+	 -moz-opacity: 0.7;
+}
+ .field-set.textarea-field-set {
+	 height: 98px;
+}
+ .field-set.textarea-field-set .field-tag {
+	 height: 78px !important;
+	 padding: 10px 5px 5px 5px;
+}
+ .field-set.textarea-field-set .field-helper {
+	 margin-top: 78px;
+}
+ .field-set.field-style-1 .field-tag {
+	 border-top: 0;
+	 border-right: 0;
+	 border-left: 0;
+	 border-bottom-width: 3px;
+}
+ .field-set.field-style-1 .field-tag:not(:placeholder-shown) ~ .field-label {
+	 margin-left: 3px !important;
+	 padding-left: 0 !important;
+}
+ input:disabled, button:disabled, select:disabled {
+	 opacity: 0.5;
+	 -webkit-opacity: 0.5;
+	 -moz-opacity: 0.5;
+	 pointer-events: none;
+	 cursor: none;
+}
+ .field-datalist {
+	 position: absolute;
+	 background-color: var(--white);
+	 width: auto;
+	 box-shadow: 0 0 6px var(--fieldThemeColor);
+	 -webkit-box-shadow: 0 0 6px var(--fieldThemeColor);
+	 max-height: 200px;
+	 overflow-y: scroll;
+	 margin-top: -30px;
+	 margin-left: 5px;
+	 z-index: 103;
+	 flex-direction: column;
+	 -webkit-flex-direction: column;
+	 text-align: left;
+}
+ @media (max-width: 426px) {
+	 .field-datalist {
+		 bottom: 0;
+		 position: fixed;
+		 right: 2px;
+		 left: 0;
+		 margin: 0;
+		 border-top: 2px solid var(--fieldThemeColor);
+	}
+}
+ .field-datalist option {
+	 padding: 5px 15px;
+	 cursor: pointer;
+	 border-bottom: 1px solid var(--fieldThemeColor);
+	 color: var(--black);
+}
+ .field-datalist option:hover, .field-datalist option:checked {
+	 background-color: var(--fieldThemeColor);
+	 color: var(--white);
+}
+ .field-datalist option:disabled {
+	 opacity: 0.5;
+	 -webkit-opacity: 0.5;
+	 -moz-opacity: 0.5;
+	 pointer-events: none;
+	 cursor: none;
+}
+ 
